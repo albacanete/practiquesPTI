@@ -1,0 +1,20 @@
+# Build with:
+# docker build -t pti - < Dockerfile_pti
+
+# Run with:
+# docker run -it --name pti \
+#		-v /YOUR_WORKING_DIRECTORY:/userVolume \
+#		-p 80:80 \
+#		pti bash
+
+FROM ubuntu:16.04
+RUN apt-get update && \
+	apt-get install -y gcc && \
+    apt-get install -y vim && \
+    apt-get install -y python && \
+    apt-get install -y apache2 && \
+    a2enmod cgi && \
+    apt-get install -y git && \
+    apt-get install -y wget
+
+	
