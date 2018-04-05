@@ -39,9 +39,11 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
+
 func Index(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintln(w, "Service OK")
 }
+
 
 func endpointFunc(w http.ResponseWriter, r *http.Request) {
     vars := mux.Vars(r)
@@ -49,6 +51,7 @@ func endpointFunc(w http.ResponseWriter, r *http.Request) {
     res := ResponseMessage{Field1: "Text1", Field2: param}
     json.NewEncoder(w).Encode(res)
 }
+
 
 func endpointFunc2JSONInput(w http.ResponseWriter, r *http.Request) {
     var requestMessage RequestMessage
@@ -70,6 +73,7 @@ func endpointFunc2JSONInput(w http.ResponseWriter, r *http.Request) {
         fmt.Println(r.FormValue("queryparam1"))
     }
 }
+
 
 func newrentalFunc (w http.ResponseWriter, r *http.Request) {
 	var requestMessage carRentalRequest
