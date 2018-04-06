@@ -10,26 +10,17 @@ import (
 	"io/ioutil"
 	"encoding/csv"
 	"os"
+	"bufio"
+	"strings"
 ) 
 
-type ResponseMessage struct {
-    Field1 string
-    Field2 string
-}
-
-type RequestMessage struct {
-    Field1 string
-    Field2 string
-}
-
-type carRentalRequest struct {
+type CarRentalRequest struct {
 	CarMaker string
 	CarModel string
 	NumberDays string
 	NumberUnits string
 	Prize string
 }
-
 
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
@@ -47,17 +38,8 @@ func Index(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintln(w, "Service OK")
 }
 
-
-func endpointFunc(w http.ResponseWriter, r *http.Request) {
-    vars := mux.Vars(r)
-    param := vars["param"]
-    res := ResponseMessage{Field1: "Text1", Field2: param}
-    json.NewEncoder(w).Encode(res)
-}
-
-
 func newrentalFunc (w http.ResponseWriter, r *http.Request) {
-	var requestMessage carRentalRequest
+	var requestMessage CarRentalRequest
     body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576))
     if err != nil {
         panic(err)
@@ -83,13 +65,26 @@ func newrentalFunc (w http.ResponseWriter, r *http.Request) {
     }
 }
 
-
 func listrentalsFunc (w http.ResponseWriter, r *http.Request) {
-	
+	file, err := os.Open("rentals.csv")
+    if err!=nil {
+		json.NewEncoder(w).Encode(err)
+		fmt.Fprintf(w, "Try ordering some rentals before you list them :)")
+		return
+    }
+    reader := csv.NewReader(bufio.NewReader(file))
+    var rentals []CarRentalRequest
+    for {
+        record, err := reader.Read()
+        if err == io.EOF {
+			break
+		}
+		fmt.Fprintf(w, "LIST OF RENTALS")
+		fmt.Fprintf(w, "The first value is %q", record[0])
+    }
 }
 
-
-func writeToFile(w http.ResponseWriter, m carRentalRequest) {
+func writeToFile(w http.ResponseWriter, m CarRentalRequest) {
     file, err := os.OpenFile("rentals.csv", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
     if err!=nil {
         json.NewEncoder(w).Encode(err)
@@ -102,20 +97,4 @@ func writeToFile(w http.ResponseWriter, m carRentalRequest) {
     file.Close()
 }
 
-
-func readFromFile() {
-	file, err := os.Open("rentals.csv")
-    if err!=nil {
-		json.NewEncoder(w).Encode(err)
-		return
-    }
-    reader := csv.NewReader(bufio.NewReader(file))
-    for {
-        record, err := reader.Read()
-        if err == io.EOF {
-			break
-		}
-		fmt.Fprintf(w, "The first value is %q", record[0])
-    }
-}
 
