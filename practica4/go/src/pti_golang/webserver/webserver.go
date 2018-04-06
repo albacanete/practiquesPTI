@@ -25,8 +25,6 @@ type CarRentalRequest struct {
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", Index)
-	//router.HandleFunc("/endpoint/{param}", endpointFunc)
-	//router.HandleFunc("/endpoint2/{param}", endpointFunc2JSONInput)
 	router.HandleFunc("/newrental/{param}", newrentalFunc)
 	router.HandleFunc("/listrentals/", listrentalsFunc)
 
@@ -59,8 +57,8 @@ func newrentalFunc (w http.ResponseWriter, r *http.Request) {
         fmt.Println("Car model: ", requestMessage.CarModel)
         fmt.Println("Number of days: ", requestMessage.NumberDays)
         fmt.Println("Number of units: ", requestMessage.NumberUnits)
-        fmt.Println("Preu: ", 1000)
-        requestMessage.Prize = "1000"
+        fmt.Println("Preu: ", 10000)
+        requestMessage.Prize = "10000"
         writeToFile(w, requestMessage)
     }
 }
@@ -73,14 +71,20 @@ func listrentalsFunc (w http.ResponseWriter, r *http.Request) {
 		return
     }
     reader := csv.NewReader(bufio.NewReader(file))
-    var rentals []CarRentalRequest
+    //var rentals []CarRentalRequest
+    fmt.Fprintln(w, "LIST OF RENTALS")
     for {
         record, err := reader.Read()
         if err == io.EOF {
 			break
 		}
-		fmt.Fprintf(w, "LIST OF RENTALS")
-		fmt.Fprintf(w, "The first value is %q", record[0])
+		rental := strings.Split(record[0], ",")
+		fmt.Fprintln(w, "Car maker: ", rental[0])
+		fmt.Fprintln(w, "Car model: ", rental[1])
+		fmt.Fprintln(w, "Number of days: ", rental[2])
+		fmt.Fprintln(w, "Number of units: ", rental[3])
+		fmt.Fprintln(w, "Prize: ", rental[4])
+		fmt.Fprintln(w, "---------------------")
     }
 }
 
