@@ -1,0 +1,455 @@
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+127.0.0.1 - - [08/Apr/2018 13:11:10] "POST /transactions/new HTTP/1.1" 201 -
+{
+  "message": "Transaction will be added to Block 2"
+}
+127.0.0.1 - - [08/Apr/2018 13:11:10] "POST /transactions/new HTTP/1.1" 201 -
+{
+  "message": "Transaction will be added to Block 2"
+}
+127.0.0.1 - - [08/Apr/2018 13:11:10] "GET /mine HTTP/1.1" 200 -
+{
+  "index": 2, 
+  "message": "New Block Forged", 
+  "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+  "proof": 134, 
+  "transactions": [
+    {
+      "amount": 8, 
+      "recipient": "B", 
+      "sender": "A"
+    }, 
+    {
+      "amount": 5, 
+      "recipient": "C", 
+      "sender": "B"
+    }, 
+    {
+      "amount": 1, 
+      "recipient": "29730c21486641f29d51fd56212fcf09", 
+      "sender": "0"
+    }
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:10] "GET /chain HTTP/1.1" 200 -
+{
+  "chain": [
+    {
+      "index": 1, 
+      "previous_hash": "1", 
+      "proof": 100, 
+      "timestamp": 1523185867.8296163, 
+      "transactions": []
+    }, 
+    {
+      "index": 2, 
+      "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+      "proof": 134, 
+      "timestamp": 1523185870.6424665, 
+      "transactions": [
+        {
+          "amount": 8, 
+          "recipient": "B", 
+          "sender": "A"
+        }, 
+        {
+          "amount": 5, 
+          "recipient": "C", 
+          "sender": "B"
+        }, 
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }
+  ], 
+  "length": 2
+}
+127.0.0.1 - - [08/Apr/2018 13:11:10] "GET /mine HTTP/1.1" 200 -
+{
+  "index": 3, 
+  "message": "New Block Forged", 
+  "previous_hash": "2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78", 
+  "proof": 157572, 
+  "transactions": [
+    {
+      "amount": 1, 
+      "recipient": "29730c21486641f29d51fd56212fcf09", 
+      "sender": "0"
+    }
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:10] "GET /chain HTTP/1.1" 200 -
+{
+  "chain": [
+    {
+      "index": 1, 
+      "previous_hash": "1", 
+      "proof": 100, 
+      "timestamp": 1523185867.8296163, 
+      "transactions": []
+    }, 
+    {
+      "index": 2, 
+      "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+      "proof": 134, 
+      "timestamp": 1523185870.6424665, 
+      "transactions": [
+        {
+          "amount": 8, 
+          "recipient": "B", 
+          "sender": "A"
+        }, 
+        {
+          "amount": 5, 
+          "recipient": "C", 
+          "sender": "B"
+        }, 
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 3, 
+      "previous_hash": "2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78", 
+      "proof": 157572, 
+      "timestamp": 1523185870.9543476, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }
+  ], 
+  "length": 3
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /mine HTTP/1.1" 200 -
+{
+  "index": 4, 
+  "message": "New Block Forged", 
+  "previous_hash": "b2dfbe6c3660525fe414524fff7d7d220fb7bf8381b4966ec24cb7d216952ea0", 
+  "proof": 305855, 
+  "transactions": [
+    {
+      "amount": 1, 
+      "recipient": "29730c21486641f29d51fd56212fcf09", 
+      "sender": "0"
+    }
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /chain HTTP/1.1" 200 -
+{
+  "chain": [
+    {
+      "index": 1, 
+      "previous_hash": "1", 
+      "proof": 100, 
+      "timestamp": 1523185867.8296163, 
+      "transactions": []
+    }, 
+    {
+      "index": 2, 
+      "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+      "proof": 134, 
+      "timestamp": 1523185870.6424665, 
+      "transactions": [
+        {
+          "amount": 8, 
+          "recipient": "B", 
+          "sender": "A"
+        }, 
+        {
+          "amount": 5, 
+          "recipient": "C", 
+          "sender": "B"
+        }, 
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 3, 
+      "previous_hash": "2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78", 
+      "proof": 157572, 
+      "timestamp": 1523185870.9543476, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 4, 
+      "previous_hash": "b2dfbe6c3660525fe414524fff7d7d220fb7bf8381b4966ec24cb7d216952ea0", 
+      "proof": 305855, 
+      "timestamp": 1523185871.528624, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }
+  ], 
+  "length": 4
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /mine HTTP/1.1" 200 -
+{
+  "index": 2, 
+  "message": "New Block Forged", 
+  "previous_hash": "84e66850c1d1ffe01c09c94eb8b5359a1d422a47a24f3ef78addf1cdb8518d9b", 
+  "proof": 86779, 
+  "transactions": [
+    {
+      "amount": 1, 
+      "recipient": "5ad33f7d8db14365a2944e7fe5a20e1e", 
+      "sender": "0"
+    }
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /mine HTTP/1.1" 200 -
+{
+  "index": 3, 
+  "message": "New Block Forged", 
+  "previous_hash": "f8b67f5fb68e25ca69aac91b6b3eb566732f46babcee13563c68b35298d209c9", 
+  "proof": 12412, 
+  "transactions": [
+    {
+      "amount": 1, 
+      "recipient": "5ad33f7d8db14365a2944e7fe5a20e1e", 
+      "sender": "0"
+    }
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /chain HTTP/1.1" 200 -
+{
+  "chain": [
+    {
+      "index": 1, 
+      "previous_hash": "1", 
+      "proof": 100, 
+      "timestamp": 1523185867.8296163, 
+      "transactions": []
+    }, 
+    {
+      "index": 2, 
+      "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+      "proof": 134, 
+      "timestamp": 1523185870.6424665, 
+      "transactions": [
+        {
+          "amount": 8, 
+          "recipient": "B", 
+          "sender": "A"
+        }, 
+        {
+          "amount": 5, 
+          "recipient": "C", 
+          "sender": "B"
+        }, 
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 3, 
+      "previous_hash": "2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78", 
+      "proof": 157572, 
+      "timestamp": 1523185870.9543476, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 4, 
+      "previous_hash": "b2dfbe6c3660525fe414524fff7d7d220fb7bf8381b4966ec24cb7d216952ea0", 
+      "proof": 305855, 
+      "timestamp": 1523185871.528624, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }
+  ], 
+  "length": 4
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "POST /nodes/register HTTP/1.1" 201 -
+{
+  "message": "New nodes have been added", 
+  "total_nodes": [
+    "localhost:5001"
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "POST /nodes/register HTTP/1.1" 201 -
+{
+  "message": "New nodes have been added", 
+  "total_nodes": [
+    "localhost:5000"
+  ]
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /chain HTTP/1.1" 200 -
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /nodes/resolve HTTP/1.1" 200 -
+{
+  "chain": [
+    {
+      "index": 1, 
+      "previous_hash": "1", 
+      "proof": 100, 
+      "timestamp": 1523185867.8296163, 
+      "transactions": []
+    }, 
+    {
+      "index": 2, 
+      "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+      "proof": 134, 
+      "timestamp": 1523185870.6424665, 
+      "transactions": [
+        {
+          "amount": 8, 
+          "recipient": "B", 
+          "sender": "A"
+        }, 
+        {
+          "amount": 5, 
+          "recipient": "C", 
+          "sender": "B"
+        }, 
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 3, 
+      "previous_hash": "2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78", 
+      "proof": 157572, 
+      "timestamp": 1523185870.9543476, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 4, 
+      "previous_hash": "b2dfbe6c3660525fe414524fff7d7d220fb7bf8381b4966ec24cb7d216952ea0", 
+      "proof": 305855, 
+      "timestamp": 1523185871.528624, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }
+  ], 
+  "message": "Our chain is authoritative"
+}
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /chain HTTP/1.1" 200 -
+{'index': 1, 'previous_hash': '1', 'proof': 100, 'timestamp': 1523185867.8296163, 'transactions': []}
+{'index': 2, 'previous_hash': '7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490', 'proof': 134, 'timestamp': 1523185870.6424665, 'transactions': [{'amount': 8, 'recipient': 'B', 'sender': 'A'}, {'amount': 5, 'recipient': 'C', 'sender': 'B'}, {'amount': 1, 'recipient': '29730c21486641f29d51fd56212fcf09', 'sender': '0'}]}
+
+-----------
+
+{'index': 2, 'previous_hash': '7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490', 'proof': 134, 'timestamp': 1523185870.6424665, 'transactions': [{'amount': 8, 'recipient': 'B', 'sender': 'A'}, {'amount': 5, 'recipient': 'C', 'sender': 'B'}, {'amount': 1, 'recipient': '29730c21486641f29d51fd56212fcf09', 'sender': '0'}]}
+{'index': 3, 'previous_hash': '2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78', 'proof': 157572, 'timestamp': 1523185870.9543476, 'transactions': [{'amount': 1, 'recipient': '29730c21486641f29d51fd56212fcf09', 'sender': '0'}]}
+
+-----------
+
+{'index': 3, 'previous_hash': '2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78', 'proof': 157572, 'timestamp': 1523185870.9543476, 'transactions': [{'amount': 1, 'recipient': '29730c21486641f29d51fd56212fcf09', 'sender': '0'}]}
+{'index': 4, 'previous_hash': 'b2dfbe6c3660525fe414524fff7d7d220fb7bf8381b4966ec24cb7d216952ea0', 'proof': 305855, 'timestamp': 1523185871.528624, 'transactions': [{'amount': 1, 'recipient': '29730c21486641f29d51fd56212fcf09', 'sender': '0'}]}
+
+-----------
+
+127.0.0.1 - - [08/Apr/2018 13:11:11] "GET /nodes/resolve HTTP/1.1" 200 -
+{
+  "message": "Our chain was replaced", 
+  "new_chain": [
+    {
+      "index": 1, 
+      "previous_hash": "1", 
+      "proof": 100, 
+      "timestamp": 1523185867.8296163, 
+      "transactions": []
+    }, 
+    {
+      "index": 2, 
+      "previous_hash": "7f6214192937f0e4257ccb37681b25b1ab8792fea50b9733e47409526dbaf490", 
+      "proof": 134, 
+      "timestamp": 1523185870.6424665, 
+      "transactions": [
+        {
+          "amount": 8, 
+          "recipient": "B", 
+          "sender": "A"
+        }, 
+        {
+          "amount": 5, 
+          "recipient": "C", 
+          "sender": "B"
+        }, 
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 3, 
+      "previous_hash": "2f9bf3289ee213099e7106e103fbd82a82287281a399d23c4eef3f03f7d2dd78", 
+      "proof": 157572, 
+      "timestamp": 1523185870.9543476, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }, 
+    {
+      "index": 4, 
+      "previous_hash": "b2dfbe6c3660525fe414524fff7d7d220fb7bf8381b4966ec24cb7d216952ea0", 
+      "proof": 305855, 
+      "timestamp": 1523185871.528624, 
+      "transactions": [
+        {
+          "amount": 1, 
+          "recipient": "29730c21486641f29d51fd56212fcf09", 
+          "sender": "0"
+        }
+      ]
+    }
+  ]
+}
+
